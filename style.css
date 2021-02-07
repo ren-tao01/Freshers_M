@@ -13,3 +13,8 @@ p{
 span{
     border: solid 1px;
 }
+header{
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

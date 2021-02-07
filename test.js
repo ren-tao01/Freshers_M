@@ -29,18 +29,25 @@ function replyUser(){
     //reset innerHTML value 
     document.getElementById('reply_msg').innerHTML = "";
 
-    for(var i = 0; i < matching_place.length; i++){
+    if(input.length == 0 || matching_place.length == 0) {
+  	// Insert logic here
+    	// let randomPlace = Object.keys(people_in_place)[Math.floor(Math.random() * people_in_place.length)];
+    	// console.log(Math.floor(Math.random() * people_in_place.length));
+    	// replyMsg(randomPlace);
+    }else {
+    	for(var i = 0; i < matching_place.length; i++) {
     	let place_name = matching_place[i];
-    	let place = getData(place_name);
-    	let subAnswer = `${titleCase(place_name)}. Number of people ${place["numberOfPeople"]}, risk level is ${place["risk level"]} and the
-					     distance is ${place["travel distance"]}. ${place["advice"]}`;
-     	document.getElementById('reply_msg').innerHTML += subAnswer + "<br />"; 
-    }
+    	replyMsg(place_name);
+   		}
+    } 
 }
 
-function getData(place_name) {
-    return people_in_place[place_name.toLowerCase()];
-}  
+function replyMsg(place_name) {
+	let place = people_in_place[place_name];
+	let subAnswer = `${titleCase(place_name)}. Number of people ${place["numberOfPeople"]}, risk level is ${place["risk level"]} and the
+				     distance is ${place["travel distance"]}. ${place["advice"]}`;
+ 	document.getElementById('reply_msg').innerHTML += subAnswer + "<br />"; 
+}
 
  function makePlaceInfo(numPeople, distance) {
     var risk;
@@ -50,12 +57,12 @@ function getData(place_name) {
         risk = "low";
         advice = "You should go now"
     }
-    else if (numPeople > 30){
+    else if (numPeople > 30) {
         risk = "high";
         advice = "You should go there one hour later"
     }
     else {
-        risk="medium";
+        risk = "medium";
         advice = "You should go there but wear mask"
     }
     return {

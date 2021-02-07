@@ -4,7 +4,7 @@
     <title>Chatbot</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="style.css">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -18,10 +18,31 @@
     
     <div id="container" >
         <div class="row justify-content-center align-items-center">
-            <div class="col" style="margin-left: 40%;">   
+            <div class="col" >   
                 <form class="form-inline" action="javascript:void(0);">
                     <div class="form-group">
                         <input id="input" type="text" placeholder="Say something..." autocomplete="off" />
+                        <datalist type="text" id="suggestions">
+                            <option value="watson">
+                            <option value="99 speedmart">
+                            <option value="7-eleven">
+                            <option value="kk mart">
+                            <option value="jaya grocer">
+                            <option value="kyochon">
+                            <option value="nando's">
+                            <option value="hungry bunch">
+                            <option value="starbucks">
+                            <option value="prime at le meridien">
+                            <option value="miyabi">
+                            <option value="freshfruits">
+                            <option value="rotiboy">
+                            <option value="gayaone">
+                            <option value="thonybread">
+                            <option value="mcdonalds">
+                            <option value="burger king">
+                            <option value="johnny rocket">
+                            <option value="machines">
+                        </datalist>
                         <button class="btn btn-default" name="submit" id="submit_button" onclick="replyUser()">
                             Go
                         </button>
@@ -29,9 +50,9 @@
                 </form>        
             </div>
         </div>
-        <div class="row">
-            <p id="user_msg"></p>
-            <p id="reply_msg" class="text-center"></p>
+        <div id="context">
+            <p id="user_msg" ></p>
+            <p id="reply_msg" ></p>
         </div>
     </div>
 </body>

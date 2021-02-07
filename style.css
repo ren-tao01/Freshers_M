@@ -1,0 +1,15 @@
+.green{
+    color: green;
+}
+.row{   
+    text-align: center;
+}
+p{
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+}
+
+span{
+    border: solid 1px;
+}
